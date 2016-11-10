@@ -1,0 +1,13 @@
+%div{:class => "center-left", :id => "login-box"}
+  %p Register a Username
+  %input{:type => "text", :id => "username", :placeholder => "Enter Username"}
+  %input{:type => "password", :id => "password", :placeholder => "Enter Password"}
+  %div{:class => "btn", :id="register"} Register
+  
+%script{:type=>"text/javascript"}
+  function registerUser(){
+    //submits the user form with the username
+    document.getElementById('login-form').submit();
+  }
+  
+  document.querySelector("#register").addEventListener("click", registerUser, false);
