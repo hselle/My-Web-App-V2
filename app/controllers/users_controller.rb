@@ -5,7 +5,9 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :password, :wins, :losses)
     end
 
-    
+    def register
+        puts "*********"
+    end
     def show
         
     end
