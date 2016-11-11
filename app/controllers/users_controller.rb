@@ -14,12 +14,19 @@ class UsersController < ApplicationController
     end
     
     def create
-        newUser = User.create!(username: params[:username], password: params[:password])
-        redirect_to "/users"
+        flash[:notice] = "Username already taken."
+        begin
+            @user = User.create!(username: params[:username], pasword: params[:password])
+            redirect_to "/users"
+        rescue ActiveRecord::RecordInvalid
+            flash[:notice] = "Username already taken."
+            redirect_to "/register"
+        end
+        
     end
     
     def index
-        
+
     end
     
     def destroy

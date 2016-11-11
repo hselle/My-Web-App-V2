@@ -10,14 +10,19 @@ Scenario: register a username
   Given I am on the register page
   When I enter the following username: Jordan
   And I enter the following password: pass
-  And I follow "register"
+  And I press "register"
   Then I should be on the users page
 
-#Scenario: username is already in database (sad path)
-#  When I type in my preferred username
-#  And I press "register" to continue
-#  But the username is already in the database
-#  Then I am prompted to type a new username
+Scenario: username is already in database (sad path)
+  Given I am on the register page
+  And The following username exists: Jordan
+  When I enter the following username: Jordan
+  And I press "register"
+  And I enter the following username: Jordan
+  And I press "register"
+  Then I should be on the register page
+  And I should see "Username already exists"
+
   
 #Scenario: no username and password entered (super sad path)
 #When I don't type a username

@@ -7,6 +7,10 @@ Given /I am on the login page/ do
     page.should have_content("Register to Play a Game")
 end
 
+When /The following username exists: (.*)$/ do |name|
+    user = User.create(username: name)
+end
+    
 When /I enter the following username: (.*)$/ do |name|
     fill_in 'username', :with => name
 end
@@ -14,7 +18,6 @@ end
 When /I enter the following password: (.*)$/ do |pass|
     fill_in 'password', :with => pass
 end
-    
     
 Then /I should see (.*) text box and (.*) text box/ do |username, password|
     regexp = /#{username}.*#{password}/m

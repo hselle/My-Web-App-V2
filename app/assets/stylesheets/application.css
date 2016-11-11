@@ -18,7 +18,11 @@
 
 body{
    /* For browsers that do not support gradients background: #09CB97; */
+  background-color: #F9F8F8;
   font-family: 'Dosis', sans-serif;
+}
+body.login{
+    background: #09CB97;
 }
 #login-box{
   position: absolute;
@@ -48,29 +52,25 @@ body{
 #login-box p{
   color: #fff;
 }
-#login-box .btn{
-  height: 30px;
-  width: 210px;
-  background-color: #EDECEE;
-  margin: 20px 0;
-  border-radius: 3px;
-  line-height: 30px;
-  text-align: center;
-  cursor: pointer;
+.btn{
+    height: 30px;
+    width: 210px;
+    background-color: #EDECEE;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Dosis', sans-serif;
 }
 #login-box .btn:hover{
   background-color: #D4D6DC;
 }
-#login-box a{
-    text-decoration: none;
-    color: #000;
-}
 
 /** dashboard **/
-
-body{
-    background-color: #F9F8F8;
-}
 .dash-header{
   position: absolute;
   top: 0;
