@@ -8,7 +8,7 @@
     = csrf_meta_tags
   %body
     - if flash[:notice]
-      .alert-box
+      .alert-box.fade-out.fade-out-delay
         %p.message= flash[:notice]
         %i.icon.ion-ios-close-empty
         
