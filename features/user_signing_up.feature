@@ -7,38 +7,39 @@ Feature: intial account creation to play the game
 Given I am on the welcome page
 
 Scenario: register a username
-  Given I am on the welcome page
+  Given I am on the users page
   When I enter the following username: Jordan
   And I enter the following password: pass
   And I press "register"
   Then I should be on the users page
 
 Scenario: username is already in database (sad path)
-  Given I am on the welcome page
-  And The following username exists: Jordan
+  Given I am on the users page
+  And the following username exists: Jordan
   When I enter the following username: Jordan
   And I press "register"
-  Then I should be on the register page
+  Then I should be on the users page
   And I should see "Username already exists"
   
 
 Scenario: login with my existing username and password
-  Given I am on the welcome page
-  When I enter the following username: Jordan
-  And I enter the following password: pass
+  Given I am on the users page
+  And the following user is in the database: Jordan pass
+  When I log in with the following username: Jordan
+  And I log in with the following password: pass
   And I press "login"
-  Then there is already my credentials in the database
-  And I should be on the users page
+  Then I should be on the users page
+  And I should see "Jordan"
   
 Scenario: typo when logging in with my password
-  Given I am on the welcome page
+  Given I am on the register page
   When I enter the following username: Jordan
   But I enter a password with a typo
   And I press "login"
   Then I should see "Username does not match password entered"
   
 Scenario: typo when logging in with my username
-  Given I am on the welcome page
+  Given I am on the register page
   When I enter a username with a typo
   And I enter the following password: pass
   And I press "login"

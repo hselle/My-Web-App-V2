@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    
+    # include ESpeak
+
     
     def user_params
         params.require(:user).permit(:username, :password, :wins, :losses)
@@ -16,15 +17,18 @@ class UsersController < ApplicationController
     def create
         begin
             @user = User.create!(username: params[:username], pasword: params[:password])
-            redirect_to "/users"
+            # speech = Speech.new("READY TO HEAR RAP OVERLY ARTICULATED?")
+            # speech.speak
+            redirect_to "/users/1"
+            
         rescue ActiveRecord::RecordInvalid
             flash[:notice] = "Username already exists."
-            render "register"
+            render "index"
         end
     end
     
     def index
-
+        
     end
     
     def destroy

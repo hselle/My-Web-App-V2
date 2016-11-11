@@ -81,6 +81,7 @@ GEM
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    espeak-ruby (1.0.3)
     execjs (2.7.0)
     gherkin (4.0.0)
     globalid (0.3.7)
@@ -222,6 +223,7 @@ DEPENDENCIES
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
+  espeak-ruby
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
