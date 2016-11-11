@@ -6,14 +6,16 @@ class UsersController < ApplicationController
     end
 
     def register
-        puts "*********"
+      
     end
+    
     def show
         
     end
     
     def create
-
+        newUser = User.create!(username: params[:username], password: params[:password])
+        redirect_to "/users"
     end
     
     def index

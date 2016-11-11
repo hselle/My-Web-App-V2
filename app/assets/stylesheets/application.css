@@ -14,9 +14,10 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Dosis');
+@import 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 
 body{
-  background: #09CB97; /* For browsers that do not support gradients */
+   /* For browsers that do not support gradients background: #09CB97; */
   font-family: 'Dosis', sans-serif;
 }
 #login-box{
@@ -29,7 +30,7 @@ body{
   left: 50%;
   transform: translateX(-50%);
 }
-#username, #userpassword{
+#username, input[type=password]{
   height: 30px;
   width: 200px;
   border: none;
@@ -60,4 +61,42 @@ body{
 #login-box .btn:hover{
   background-color: #D4D6DC;
 }
+#login-box a{
+    text-decoration: none;
+    color: #000;
+}
 
+/** dashboard **/
+
+body{
+    background-color: #F9F8F8;
+}
+.dash-header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  background-color: #09CB97;
+}
+.dash-header .status{
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  top: 15px;
+  cursor: pointer;
+  left: calc(100% - 100px);
+}
+.dash-body{
+  position: absolute;
+  top:80px;
+  left: 0;
+  width: 90%;
+  height: 100px;
+  padding: 20px;
+}
+.welcome-header{
+  color: #000;
+  font-size: 30px;
+}
