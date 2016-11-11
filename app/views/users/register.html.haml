@@ -1,12 +1,10 @@
-%body.login
-  %div{:class => "center-left", :id => "login-box"}
-    %p Register to Play a Game
-    %form{:id => 'myform', :action => '/users', :method => 'POST'}
-      %input{:type => "text", :id => "username", :placeholder => "Enter Username", :name => "username"}
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      %input{:type => "password", :id => "userpassword", :placeholder => "Enter Password", :name => "password"}
-      %input{:type => "password", :id => "confirmedpassword", :placeholder => "Confirm Password"}
-      %button.btn#register{:type => "submit", :form => "myform", :value => "Submit"}
-        Register
+%div{:class => "center-left", :id => "login-box"}
+  %p Register to Play a Game
+  %form{:id => 'myform', :action => '/users', :method => 'POST'}
+    %input{:type => "text", :id => "username", :placeholder => "Enter Username", :name => "username"}
+    %input{:type => "password", :id => "userpassword", :placeholder => "Enter Password", :name => "password"}
+    %input{:type => "password", :id => "confirmedpassword", :placeholder => "Confirm Password"}
+    %button.btn#register{:type => "submit", :form => "myform", :value => "Submit"}
+      Register
+ 
           

@@ -1,0 +1,8 @@
+%body.login
+  %div{:class => "center-left", :id => "login-box"}
+    %p Login to Play a Game
+    %form{:id => 'myform', :action => '/users', :method => 'POST'}
+      %input{:type => "text", :id => "username", :placeholder => "Enter Username", :name => "username"}
+      %input{:type => "password", :id => "userpassword", :placeholder => "Enter Password", :name => "password"}
+      %button.btn#register{:type => "submit", :form => "myform", :value => "Submit"}
+        Login

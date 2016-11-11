@@ -103,7 +103,10 @@ body.login{
 
 /** flash message **/
 #notice, #warning {
-  background: rosybrown;
+  background: blue;
   margin: 1em 0;
   padding: 4px;
+  height: 200px;
+  width: 200px;
+  border: 3px solid red;
 }
