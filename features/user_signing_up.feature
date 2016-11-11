@@ -33,10 +33,10 @@ Scenario: login with existing username and password
 Scenario: typo when logging in with password
   Given I am on the users page
   And the following user is in the database: Jordan pass
-  When I log in with the following user: Jordan invalidPasst
+  When I log in with the following user: Jordan invalidPass
   And I press "login"
   Then I should be on the users page
-  And I should see "Invalid password"
+  And I should see "Invalid username or password"
   
 Scenario: typo when logging in with username
   Given I am on the users page
@@ -44,7 +44,15 @@ Scenario: typo when logging in with username
   When I log in with the following user: Steve pass
   And I press "login"
   Then I should be on the users page
-  And I should see "Invalid username"
+  And I should see "Invalid username or password"
+  
+Scenario: login without registered username and password
+  Given I am on the users page
+  And the following user is not in the database: Mark pass
+  When I log in with the following user: Mark pass
+  And I press "login"
+  Then I should be on the users page
+  And I should see "Invalid username or password"
   
 #Scenario: no username and password entered (super sad path)
 #When I don't type a username

@@ -41,3 +41,12 @@ And /I should see (.*) button/ do
     regexp = /login/
     expect(page.body).to match(regexp)
 end
+
+When /the following user is not in the database: (.*) (.*)$/ do |name, password|
+    expect{User.find(username: name, pasword: password)}.to raise_error(ActiveRecord::RecordNotFound)
+end
+
+Then /I should see (.*) button/ do
+    regexp = /register/
+    expect(page.body).to match(regexp)
+end

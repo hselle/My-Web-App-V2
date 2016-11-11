@@ -81,6 +81,7 @@ input[type=text]:focus, input[type=password]:focus{
   height: 50px;
   color: #fff;
   background-color: #09CB97;
+  box-shadow: 1px 3px 10px #888888;
 }
 .dash-header .status{
   position: absolute;
@@ -132,4 +133,27 @@ input[type=text]:focus, input[type=password]:focus{
   top: 0;
   left: 0;
   background-color: #09CB97;
+}
+
+@-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@-moz-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+.fade-out {
+  opacity:1; 
+  -webkit-animation: fadeOut ease-in 1; 
+  -moz-animation:fadeOut ease-in 1;
+  animation:fadeOut ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.7s;
+  -moz-animation-duration:0.7;
+  animation-duration:0.7s;
+  
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  animation-delay: 4s;
 }
