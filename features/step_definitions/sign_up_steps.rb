@@ -7,12 +7,14 @@ Given /I am on the login page/ do
     page.should have_content("Register to Play a Game")
 end
 
-When /the following username exists: (.*)$/ do |name|
-    user = User.create!(username: name)
-end
 
-When /the following user exists in the database: (.*) (.*)$/ do |name, password| 
+When /the following user is in the database: (.*) (.*)$/ do |name, password| 
     user = User.create!(username: name, pasword: password)
+end
+    
+When /I log in with the following user: (.*) (.*)/ do |name, pass|
+    fill_in 'login_username', :with => name
+    fill_in 'login_password', :with => pass
 end
     
 When /I enter the following username: (.*)$/ do |name|

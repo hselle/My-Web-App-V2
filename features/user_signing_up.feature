@@ -11,39 +11,40 @@ Scenario: register a username
   When I enter the following username: Jordan
   And I enter the following password: pass
   And I press "register"
-  Then I should be on the users page
+  Then I should be on the users/1 page
 
 Scenario: username is already in database (sad path)
   Given I am on the users page
-  And the following username exists: Jordan
+  And the following user is in the database: Jordan pass
   When I enter the following username: Jordan
   And I press "register"
   Then I should be on the users page
   And I should see "Username already exists"
   
 
-Scenario: login with my existing username and password
+Scenario: login with existing username and password
   Given I am on the users page
   And the following user is in the database: Jordan pass
-  When I log in with the following username: Jordan
-  And I log in with the following password: pass
+  When I log in with the following user: Jordan pass
+  And I press "login"
+  Then I should be on the users/1 page
+  And I should see "Hello, Jordan"
+  
+Scenario: typo when logging in with password
+  Given I am on the users page
+  And the following user is in the database: Jordan pass
+  When I log in with the following user: Jordan invalidPasst
   And I press "login"
   Then I should be on the users page
-  And I should see "Jordan"
+  And I should see "Invalid password"
   
-Scenario: typo when logging in with my password
-  Given I am on the register page
-  When I enter the following username: Jordan
-  But I enter a password with a typo
+Scenario: typo when logging in with username
+  Given I am on the users page
+  And the following user is in the database: Jordan pass
+  When I log in with the following user: Steve pass
   And I press "login"
-  Then I should see "Username does not match password entered"
-  
-Scenario: typo when logging in with my username
-  Given I am on the register page
-  When I enter a username with a typo
-  And I enter the following password: pass
-  And I press "login"
-  Then I should see "Username does not match password entered"
+  Then I should be on the users page
+  And I should see "Invalid username"
   
 #Scenario: no username and password entered (super sad path)
 #When I don't type a username

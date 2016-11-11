@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users
   resources :games
   
-  #get '/register', to: 'users#register', controller: 'users_controller'
+  post '/users/login', to: 'users#login', controller: 'users_controller'
   #root :to => redirect('/register')
   
   # Example of named route that can be invoked with purchase_url(id: product.id)

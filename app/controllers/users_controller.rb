@@ -1,25 +1,45 @@
+
+# require_relative 'voicers_tts'
 class UsersController < ApplicationController
     # include ESpeak
-
-    
+    # require 'rubygems'
+    # require 'espeak-ruby'
+    # include ESpeak
+        
     def user_params
         params.require(:user).permit(:username, :password, :wins, :losses)
     end
 
-    def register
-      
+    def login
+      #puts params[:login_username]
+      #puts params[:login_password]
+      @user = User.find_by_username(params[:login_username])
+      if @user == nil
+          flash[:notice] = "Invalid username"
+          redirect_to "/users"
+      elsif params[:login_password] == @user.pasword
+          session[:username] = @user.username
+          puts @user
+          redirect_to user_path(@user)
+      else
+          flash[:notice] = "Invalid password"
+          redirect_to "/users"
+      end
     end
     
     def show
+        id = params[:id]
+         @user = User.find(id)
         
     end
     
     def create
         begin
-            @user = User.create!(username: params[:username], pasword: params[:password])
+            user = User.create!(username: params[:username], pasword: params[:password])
             # speech = Speech.new("READY TO HEAR RAP OVERLY ARTICULATED?")
             # speech.speak
-            redirect_to "/users/1"
+            @user = User.find_by_username(params[:username])
+            redirect_to user_path(@user)
             
         rescue ActiveRecord::RecordInvalid
             flash[:notice] = "Username already exists."
@@ -34,5 +54,6 @@ class UsersController < ApplicationController
     def destroy
         
     end
+
 
 end

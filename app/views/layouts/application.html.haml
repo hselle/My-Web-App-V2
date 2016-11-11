@@ -7,8 +7,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
+    - if flash[:notice]
+      .alert-box
+        %p.message= flash[:notice]
+        %i.icon.ion-ios-close-empty
         
-      = yield
+    = yield
