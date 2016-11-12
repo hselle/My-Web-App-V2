@@ -91,6 +91,10 @@ input[type=text]:focus, input[type=password]:focus{
   cursor: pointer;
   left: calc(100% - 100px);
 }
+.dash-header a.status{
+  text-decoration: none;
+  color: #fff;
+}
 .dash-body{
   position: absolute;
   top:80px;
@@ -149,12 +153,14 @@ input[type=text]:focus, input[type=password]:focus{
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
 
-  -webkit-animation-duration:1.5s;
-  -moz-animation-duration:1.5s;
-  animation-duration:1.5s;
+  -webkit-animation-duration:1.7s;
+  -moz-animation-duration:1.7s;
+  animation-duration:1.7s;
+  
 }
+
 .fade-out-delay{
-    -webkit-animation-delay: 2s;
-    -moz-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s;
 }

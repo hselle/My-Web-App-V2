@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     # require 'rubygems'
     # require 'espeak-ruby'
     # include ESpeak
-        
+    require_relative 'voicerss_tts'
+    
+    
     def user_params
         params.require(:user).permit(:username, :password, :wins, :losses)
     end
@@ -33,7 +35,29 @@ class UsersController < ApplicationController
     
     def show
         id = params[:id]
-         @user = User.find(id)
+        @user = User.find(id)
+        # voice = VoiceRSS.speech({
+        #     'key' => 'a0ce51728bfb415f9423a6b9851ca4bc',
+        #     'hl' => 'en-us',
+        #     'src' => "How could a bitch so bad pussy be so good? (So good)
+        #                 How could a million dollar nigga be so hood? It\'s dolph
+        #                 All that ass she got that\'s why she walk like that, yeah
+        #                 All this cash I got that\'s why I talk like that!
+        #                 Balmain and margielas what I\'m rocking",
+        #     'r' => '0',
+        #     'c' => 'mp3',
+        #     'f' => '44khz_16bit_stereo',
+        #     'ssml' => 'false',
+        #     'b64' => 'true'
+        # })
+        # @response = voice['response']
+        # puts @response
+         #if session[:username].exists
+         #id =params[:id]
+         #@user = User.find(id)
+         
+         #else
+         #redirect_to index
         
     end
     
@@ -57,6 +81,11 @@ class UsersController < ApplicationController
     
     def destroy
         
+    end
+    
+    def logout
+        session.clear
+        redirect_to "/users"
     end
 
 
