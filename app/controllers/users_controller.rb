@@ -36,28 +36,35 @@ class UsersController < ApplicationController
     def show
         id = params[:id]
         @user = User.find(id)
+        # artist = 'D.R.A.M.'
+        # song = 'broccoli'
+        # key = '159f7589d4e9ee7d513581b74a5e69b8'
+        # uri = URI.parse("https://api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=#{artist}&q_track=#{song}&quorum_factor=1&apikey=#{key}")
+        # track_id_response = Net::HTTP.get_response(uri)
+        # # print response.body
+        # parsed_json = JSON.parse(track_id_response.body)
+        # track_id = parsed_json['message']['body']['track_list'][0]['track']['track_id']
+        # uri = URI.parse("https://api.musixmatch.com/ws/1.1/track.lyrics.get?format=json&apikey=#{key}&track_id=#{track_id}")
+        # lyrics_response = Net::HTTP.get_response(uri)
+        # parsed_json = JSON.parse(lyrics_response.body)
+        # @lyrics = parsed_json['message']['body']['lyrics']['lyrics_body']
+        
+        # # print response
+
+        #  #if session[:username].exists
+        #  #id =params[:id]
+        #  #@user = User.find(id)
         # voice = VoiceRSS.speech({
         #     'key' => 'a0ce51728bfb415f9423a6b9851ca4bc',
         #     'hl' => 'en-us',
-        #     'src' => "How could a bitch so bad pussy be so good? (So good)
-        #                 How could a million dollar nigga be so hood? It\'s dolph
-        #                 All that ass she got that\'s why she walk like that, yeah
-        #                 All this cash I got that\'s why I talk like that!
-        #                 Balmain and margielas what I\'m rocking",
+        #     'src' => @lyrics,
         #     'r' => '0',
         #     'c' => 'mp3',
         #     'f' => '44khz_16bit_stereo',
         #     'ssml' => 'false',
         #     'b64' => 'true'
         # })
-        # @response = voice['response']
-        # puts @response
-         #if session[:username].exists
-         #id =params[:id]
-         #@user = User.find(id)
-         
-         #else
-         #redirect_to index
+        # @sound_string = voice['response']
         
     end
     

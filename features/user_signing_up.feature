@@ -1,4 +1,4 @@
-Feature: intial account creation to play the game
+Feature: intial account creation or login to play the game
   
   As a first time game player (without a SoundCloud account)
   So that I can play the game
@@ -28,7 +28,7 @@ Scenario: login with existing username and password
   When I log in with the following user: Jordan pass
   And I press "login"
   Then I should be on the users/1 page
-  And I should see "Hello, Jordan"
+  And I should see "Hello Jordan"
   
 Scenario: typo when logging in with password
   Given I am on the users page
@@ -36,7 +36,7 @@ Scenario: typo when logging in with password
   When I log in with the following user: Jordan invalidPass
   And I press "login"
   Then I should be on the users page
-  And I should see "Invalid username or password"
+  And I should see "Invalid password"
   
 Scenario: typo when logging in with username
   Given I am on the users page
@@ -44,15 +44,7 @@ Scenario: typo when logging in with username
   When I log in with the following user: Steve pass
   And I press "login"
   Then I should be on the users page
-  And I should see "Invalid username or password"
-  
-Scenario: login without registered username and password
-  Given I am on the users page
-  And the following user is not in the database: Mark pass
-  When I log in with the following user: Mark pass
-  And I press "login"
-  Then I should be on the users page
-  And I should see "Invalid username or password"
+  And I should see "Invalid username"
   
 #Scenario: no username and password entered (super sad path)
 #When I don't type a username
