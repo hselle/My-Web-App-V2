@@ -1,3 +1,6 @@
 require 'rails_helper'
 
-describe ''
+describe 'user playing game' do
+    
+    
+end
