@@ -81,7 +81,6 @@ input[type=text]:focus, input[type=password]:focus{
   height: 50px;
   color: #fff;
   background-color: #09CB97;
-  box-shadow: 1px 3px 10px #888888;
 }
 .dash-header .status{
   position: absolute;
@@ -90,10 +89,6 @@ input[type=text]:focus, input[type=password]:focus{
   top: 15px;
   cursor: pointer;
   left: calc(100% - 100px);
-}
-.dash-header a.status{
-  text-decoration: none;
-  color: #fff;
 }
 .dash-body{
   position: absolute;
@@ -119,12 +114,11 @@ input[type=text]:focus, input[type=password]:focus{
   background-color: #D46360;
   padding: 4px 10px;
   color: #fff;
-  box-shadow: 1px 1px 2px #888888;
 }
 .alert-box i{
   position: absolute;
-  top: 5px;
-  left: 290px;
+  top: 15px;
+  left: 300px;
   font-size: 30px;
   color: #fff;
   cursor: pointer;
@@ -139,28 +133,79 @@ input[type=text]:focus, input[type=password]:focus{
   background-color: #09CB97;
 }
 
-@-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
-@-moz-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
-@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
-
-.fade-out {
-  opacity:1; 
-  -webkit-animation: fadeOut ease-in 1; 
-  -moz-animation:fadeOut ease-in 1;
-  animation:fadeOut ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:1.7s;
-  -moz-animation-duration:1.7s;
-  animation-duration:1.7s;
-  
+/** game styling goes here **/
+#status-box{
+  position: absolute;
+  top: 50px;
+  width: 350px;
+  height: 60px;
+  background-color: #E6F3F8;
+  border-radius: 3px;
+  box-shadow: 1px 3px 15px #d8d8d8;
+  padding: 10px 20px;
+  color: #ABABAA;
+}
+i.ion-ios-play, i.ion-ios-pause{
+  position: absolute;
+  font-size: 50px;
+  cursor: pointer;
+  color: #40D0C8;
+}
+.bar-box{
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  height: 40px;
+  width: 300px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+.answers-box{
+  position: absolute;
+  top: 150px;
+  width: 400px;
+  min-height: 100px;
+}
+.answer{
+  position: relative;
+  height: 40px;
+  width: 350px;
+  margin: 5px 0;
+  padding-left: 20px;
+}
+.answer div{
+  position: absolute;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #74CEBA;
+  color: #fff;
+  border-radius: 3px;
 }
 
-.fade-out-delay{
-    -webkit-animation-delay: 5s;
-    -moz-animation-delay: 5s;
-    animation-delay: 5s;
+/**  radio button styling **/
+.answer input[type="radio"]{
+  visibility: hidden;
 }
+.answer input[type="radio"] + label {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  height: 28px;
+  width: 300px;
+  border-radius: 3px;
+  border: 1px solid #74CEBA;
+  text-indent: 40px;
+  font-size: 14px;
+  line-height: 28px;
+  color: #A0A9B1;
+  cursor: pointer; 
+}
+.answer input[type="radio"]:checked + label {
+  color: #1C907F;
+}
+
