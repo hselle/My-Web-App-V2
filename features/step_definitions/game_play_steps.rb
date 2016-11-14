@@ -10,6 +10,7 @@ When /I check the following answer: (.*)/ do |check, answer_list|
   if check
     check("answer_#{list}")
   end
+  end
 end
 
 Then /I should see: (.*)/ do |text|
