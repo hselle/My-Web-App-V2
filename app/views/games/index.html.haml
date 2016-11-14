@@ -4,13 +4,17 @@
     Get Ready ...
 .answers-box
   %form#my-answers
-  - @songs_choices.each_with_index do |song, index|
-    .answer
-      %div #{index + 1}
-      %input{:name => "artist", :type => "radio", :value => "#{song[0]}", :id => song[0]}/
-      %label{:for => "#{song[0]}"} #{song[0]}
+    - @songs_choices.each_with_index do |song, index|
+      .answer
+        %div #{index + 1}
+        %input{:name => "artist", :type => "radio", :value => "#{song[0]}", :id => song[0]}/
+        %label{:for => "#{song[0]}"} #{song[0]}
+    %button.game-btn{:type => "submit"}
+      %i.icon.ion-android-checkmark-circle
+      Submit Answer
+
       
-%audio#uncletom{:src => "#{@sound_string}", :autoplay => "autoplay"}
+%audio#uncletom{:src => "#{@sound_string}"}
   Your browser does not support the
   %code audio
   element. Sad!

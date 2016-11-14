@@ -8,6 +8,10 @@ class GamesController < ApplicationController
 
     end
     
+    def create
+        redirect games_path
+    end
+    
     def index 
         songs = []
         File.open("/home/ubuntu/workspace/songs.csv", "r").each_line do |line|

@@ -90,6 +90,8 @@ input[type=text]:focus, input[type=password]:focus{
   top: 15px;
   cursor: pointer;
   left: calc(100% - 100px);
+  text-decoration: none;
+  color: #FFF;
 }
 .dash-body{
   position: absolute;
@@ -173,11 +175,12 @@ input[type=text]:focus, input[type=password]:focus{
   padding: 10px 20px;
   color: #ABABAA;
 }
-i{
+#status-box i.icon{
   position: absolute;
   font-size: 50px;
   cursor: pointer;
   color: #40D0C8;
+  text-shadow: 1px 1px 5px #888888;
 }
 .bar-box{
   position: absolute;
@@ -236,6 +239,14 @@ i{
 .answer input[type="radio"]:checked + label {
   color: #1C907F;
 }
+.answer input[type="radio"]:checked + label::after {
+  content: "\f375";
+  font-family: "ionicons";
+  font-size: 16px;
+  text-align: center;
+  margin-left: 10px;
+}
+
 .songlist{
   position: absolute;
   top: 200px;
@@ -248,6 +259,19 @@ i{
   padding: 10px 25px;
   border-radius: 3px;
 }
+.game-btn{
+  background-color: #1EBBA6; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 /*
 .dash-body input[type="submit"]{
   background-color: #09CB97;

@@ -3,7 +3,7 @@
   .bar-box
     Get Ready ...
 .answers-box
-  %form#my-answers
+  %form#my-answers{:action => "/games", :method => "post"}
     .answer
       %div 1
       %input#beyonce{:name => "artist", :type => "radio", :value => "Beyonce Carter"}/
