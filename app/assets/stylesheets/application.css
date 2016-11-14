@@ -107,22 +107,49 @@ input[type=text]:focus, input[type=password]:focus{
 /** flash message **/
 .alert-box{
   position: absolute;
-  z-index: 99;
   height: 40px;
   width:300px;
   font-size: 14px;
   border-radius: 3px;
   background-color: #D46360;
-  padding: 4px 10px;
+  padding: 1px 10px;
   color: #fff;
+  z-index: 99;
+  box-shadow: 1px 1px 2px #888888;
 }
 .alert-box i{
   position: absolute;
-  top: 15px;
+  top: 10px;
   left: 300px;
   font-size: 30px;
   color: #fff;
   cursor: pointer;
+}
+
+@-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@-moz-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+.fade-out {
+  opacity:1; 
+  -webkit-animation: fadeOut ease-in 1; 
+  -moz-animation:fadeOut ease-in 1;
+  animation:fadeOut ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1.5s;
+  -moz-animation-duration:1.5s;
+  animation-duration:1.5s;
+  
+}
+
+.fade-out-delay{
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s;
 }
 
 #main{

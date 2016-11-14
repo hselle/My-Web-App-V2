@@ -55,6 +55,9 @@ describe 'setting up game' do
         @answer_song = @songs_choices[randnum]
         expect(@answer_song).to eq(@songs_choices[randnum])
     end
+    
+    it 'get lyrics from the API' do 
+        
 end
 =begin
         choices_indexes = game_controller.get_four_rand_numbers(songs.length)
