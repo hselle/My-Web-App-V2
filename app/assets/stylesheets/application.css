@@ -81,6 +81,7 @@ input[type=text]:focus, input[type=password]:focus{
   height: 50px;
   color: #fff;
   background-color: #09CB97;
+  box-shadow: 1px 1px 10px #888888;
 }
 .dash-header .status{
   position: absolute;
@@ -213,4 +214,24 @@ i.ion-ios-play, i.ion-ios-pause{
   top: 200px;
   left: 150px;
 }
-
+.dash-body a{
+  background-color: #09CB97;
+  text-decoration: none;
+  color: #FFF;
+  padding: 10px 25px;
+  border-radius: 3px;
+}
+/*
+.dash-body input[type="submit"]{
+  background-color: #09CB97;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+*/

@@ -1,0 +1,18 @@
+#status-box
+  %i.icon.ion-ios-pause
+  .bar-box
+    Get Ready ...
+.answers-box
+  %form#my-answers
+  - @songs_choices.each_with_index do |song, index|
+    .answer
+      %div #{index + 1}
+      %input{:name => "artist", :type => "radio", :value => "#{song[0]}", :id => song[0]}/
+      %label{:for => "#{song[0]}"} #{song[0]}
+      
+%audio#uncletom{:src => "#{@sound_string}", :autoplay => "autoplay"}
+  Your browser does not support the
+  %code audio
+  element. Sad!
+
+= javascript_include_tag 'game'
