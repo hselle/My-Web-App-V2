@@ -57,6 +57,7 @@ describe 'setting up game' do
     end
     
     it 'get lyrics from the API' do 
+    end
         
 end
 =begin
